@@ -12,7 +12,7 @@ class SearchViewController: UIViewController {
     @IBOutlet var searchBar: UISearchBar!
     @IBOutlet var tableView: UITableView!
     
-    var searchResults = [String]()
+    var searchResults = [SearchResult]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,7 +31,10 @@ extension SearchViewController: UISearchBarDelegate {
         
         searchResults = []
         for i in 0...2 {
-            searchResults.append(String(format: "Fake Result %d for '%@'", i, searchBar.text!))
+            let searchResult = SearchResult()
+            searchResult.name = String(format: "Fake Result %d for '%@'", i)
+            searchResult.artistName = searchBar.text!
+            searchResults.append(searchResult)
         }
         tableView.reloadData()
     }
