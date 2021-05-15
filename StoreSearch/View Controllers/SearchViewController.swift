@@ -32,7 +32,7 @@ extension SearchViewController: UISearchBarDelegate {
         searchResults = []
         for i in 0...2 {
             let searchResult = SearchResult()
-            searchResult.name = String(format: "Fake Result %d for '%@'", i)
+            searchResult.name = String(format: "Fake Result %d for", i)
             searchResult.artistName = searchBar.text!
             searchResults.append(searchResult)
         }
@@ -62,9 +62,11 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
         var cell: UITableViewCell! = tableView.dequeueReusableCell(
             withIdentifier: cellIdentifier)
         if cell == nil {
-            cell = UITableViewCell(style: .default, reuseIdentifier: cellIdentifier)
+            cell = UITableViewCell(style: .subtitle, reuseIdentifier: cellIdentifier)
         }
-        cell.textLabel!.text = searchResults[indexPath.row]
+        let searchResult = searchResults[indexPath.row]
+        cell.textLabel!.text = searchResult.name
+        cell.detailTextLabel!.text = searchResult.artistName
         return cell
     }
 }
