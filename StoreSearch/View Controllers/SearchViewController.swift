@@ -31,7 +31,7 @@ extension SearchViewController: UISearchBarDelegate {
         searchBar.resignFirstResponder()
         
         searchResults = []
-        if searchBar.text! != "justin bieber" {
+        if searchBar.text! != "Ju" {
             for i in 0...2 {
                 let searchResult = SearchResult()
                 searchResult.name = String(format: "Fake Result %d for", i)
@@ -84,5 +84,23 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
             cell.detailTextLabel!.text = searchResult.artistName
         }
         return cell
+    }
+    
+    func tableView(
+        _ tableView: UITableView,
+        didSelectRowAt indexPath: IndexPath
+    ) {
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
+    
+    func tableView(
+        _ tableView: UITableView,
+        willSelectRowAt indexPath: IndexPath
+    ) -> IndexPath? {
+        if searchResults.count == 0 {
+            return nil
+        } else {
+            return indexPath
+        }
     }
 }
