@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B96ABDF8264F48D700AF4250 /* SearchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = B96ABDF7264F48D700AF4250 /* SearchResult.swift */; };
 		B9D5A93B264F0B5500F920D7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9D5A93A264F0B5500F920D7 /* AppDelegate.swift */; };
 		B9D5A93D264F0B5500F920D7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9D5A93C264F0B5500F920D7 /* SceneDelegate.swift */; };
 		B9D5A93F264F0B5500F920D7 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9D5A93E264F0B5500F920D7 /* SearchViewController.swift */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B96ABDF7264F48D700AF4250 /* SearchResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResult.swift; sourceTree = "<group>"; };
 		B9D5A937264F0B5500F920D7 /* StoreSearch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StoreSearch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B9D5A93A264F0B5500F920D7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B9D5A93C264F0B5500F920D7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -37,6 +39,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B96ABDF6264F485F00AF4250 /* Data Model */ = {
+			isa = PBXGroup;
+			children = (
+				B96ABDF7264F48D700AF4250 /* SearchResult.swift */,
+			);
+			path = "Data Model";
+			sourceTree = "<group>";
+		};
 		B9D5A92E264F0B5500F920D7 = {
 			isa = PBXGroup;
 			children = (
@@ -57,6 +67,7 @@
 			isa = PBXGroup;
 			children = (
 				B9D5A94E264F0C0400F920D7 /* View Controllers */,
+				B96ABDF6264F485F00AF4250 /* Data Model */,
 				B9D5A93A264F0B5500F920D7 /* AppDelegate.swift */,
 				B9D5A93C264F0B5500F920D7 /* SceneDelegate.swift */,
 				B9D5A940264F0B5500F920D7 /* Main.storyboard */,
@@ -147,6 +158,7 @@
 			files = (
 				B9D5A93F264F0B5500F920D7 /* SearchViewController.swift in Sources */,
 				B9D5A93B264F0B5500F920D7 /* AppDelegate.swift in Sources */,
+				B96ABDF8264F48D700AF4250 /* SearchResult.swift in Sources */,
 				B9D5A93D264F0B5500F920D7 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
