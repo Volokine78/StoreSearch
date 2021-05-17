@@ -18,6 +18,7 @@ class SearchViewController: UIViewController {
     struct TableView {
         struct CellIdentifiers {
             static let searchResultCell = "SearchResultCell"
+            static let nothingFoundCell = "NothingFoundCell"
         }
     }
 
@@ -29,8 +30,10 @@ class SearchViewController: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         
-        let cellNib = UINib(nibName: TableView.CellIdentifiers.searchResultCell, bundle: nil)
+        var cellNib = UINib(nibName: TableView.CellIdentifiers.searchResultCell, bundle: nil)
         tableView.register(cellNib, forCellReuseIdentifier: TableView.CellIdentifiers.searchResultCell)
+        cellNib = UINib(nibName: TableView.CellIdentifiers.nothingFoundCell, bundle: nil)
+        tableView.register(cellNib, forCellReuseIdentifier: TableView.CellIdentifiers.nothingFoundCell)
     }
 }
 
@@ -76,21 +79,20 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
         _ tableView: UITableView,
         cellForRowAt indexPath: IndexPath
     ) -> UITableViewCell {
-        let cellIdentifier = TableView.CellIdentifiers.searchResultCell
-        
-        let cell = tableView.dequeueReusableCell(
-            withIdentifier: cellIdentifier,
-            for: indexPath) as! SearchResultCell
-        
         if searchResults.count == 0 {
-            cell.nameLabel.text = "(Nothing Found)"
-            cell.artistNameLabel.text = ""
+            return tableView.dequeueReusableCell(
+                withIdentifier:TableView.CellIdentifiers.nothingFoundCell,
+                for: indexPath)
         } else {
+            let cell = tableView.dequeueReusableCell(
+                withIdentifier: TableView.CellIdentifiers.searchResultCell,
+                for: indexPath) as! SearchResultCell
+            
             let searchResult = searchResults[indexPath.row]
             cell.nameLabel.text = searchResult.name
             cell.artistNameLabel.text = searchResult.artistName
+            return cell
         }
-        return cell
     }
     
     func tableView(
