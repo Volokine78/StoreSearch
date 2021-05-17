@@ -22,6 +22,9 @@ class SearchViewController: UIViewController {
         searchBar.delegate = self
         tableView.delegate = self
         tableView.dataSource = self
+        
+        let cellNib = UINib(nibName: "SearchResultCell", bundle: nil)
+        tableView.register(cellNib, forCellReuseIdentifier: "SearchResultCell")
     }
 }
 
@@ -69,19 +72,17 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
     ) -> UITableViewCell {
         let cellIdentifier = "SearchResultCell"
         
-        var cell: UITableViewCell! = tableView.dequeueReusableCell(
-            withIdentifier: cellIdentifier)
-        if cell == nil {
-            cell = UITableViewCell(style: .subtitle, reuseIdentifier: cellIdentifier)
-        }
+        let cell = tableView.dequeueReusableCell(
+            withIdentifier: cellIdentifier,
+            for: indexPath) as! SearchResultCell
         
         if searchResults.count == 0 {
-            cell.textLabel!.text = "(Nothing Found)"
-            cell.detailTextLabel!.text = ""
+            cell.nameLabel.text = "(Nothing Found)"
+            cell.artistNameLabel.text = ""
         } else {
             let searchResult = searchResults[indexPath.row]
-            cell.textLabel!.text = searchResult.name
-            cell.detailTextLabel!.text = searchResult.artistName
+            cell.nameLabel.text = searchResult.name
+            cell.artistNameLabel.text = searchResult.artistName
         }
         return cell
     }
