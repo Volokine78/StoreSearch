@@ -52,10 +52,10 @@
             </tableViewCellContentView>
             <connections>
                 <outlet property="artistNameLabel" destination="Vhs-zJ-VKk" id="wZa-gg-LZm"/>
-                <outlet property="artworkImageView" destination="oU6-Lo-x9F" id="Smo-Tl-MVp"/>
+                <outlet property="artworkImageView" destination="oU6-Lo-x9F" id="Cmg-zb-IK4"/>
                 <outlet property="nameLabel" destination="Irz-bQ-zQh" id="0Mh-GX-6zW"/>
             </connections>
-            <point key="canvasLocation" x="-35" y="-67"/>
+            <point key="canvasLocation" x="-92" y="-47"/>
         </tableViewCell>
     </objects>
     <resources>

@@ -28,7 +28,7 @@
                     <constraint firstItem="bKN-Qd-Q7C" firstAttribute="centerX" secondItem="2c3-UC-5QC" secondAttribute="centerX" id="fDn-sq-ufd"/>
                 </constraints>
             </tableViewCellContentView>
-            <point key="canvasLocation" x="500" y="82"/>
+            <point key="canvasLocation" x="500" y="81.859070464767626"/>
         </tableViewCell>
     </objects>
     <resources>
