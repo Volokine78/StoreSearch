@@ -15,13 +15,6 @@ class SearchViewController: UIViewController {
     var searchResults = [SearchResult]()
     var hasSearched = false
     
-    struct TableView {
-        struct CellIdentifiers {
-            static let searchResultCell = "SearchResultCell"
-            static let nothingFoundCell = "NothingFoundCell"
-        }
-    }
-
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -32,10 +25,10 @@ class SearchViewController: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         
-        var cellNib = UINib(nibName: TableView.CellIdentifiers.searchResultCell, bundle: nil)
-        tableView.register(cellNib, forCellReuseIdentifier: TableView.CellIdentifiers.searchResultCell)
-        cellNib = UINib(nibName: TableView.CellIdentifiers.nothingFoundCell, bundle: nil)
-        tableView.register(cellNib, forCellReuseIdentifier: TableView.CellIdentifiers.nothingFoundCell)
+        var cellNib = UINib(nibName: SearchResultCell.reuseIdentifier, bundle: nil)
+        tableView.register(cellNib, forCellReuseIdentifier: SearchResultCell.reuseIdentifier)
+        cellNib = UINib(nibName: Constants.nothingFoundCell, bundle: nil)
+        tableView.register(cellNib, forCellReuseIdentifier: Constants.nothingFoundCell)
     }
 }
 
@@ -83,11 +76,11 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
     ) -> UITableViewCell {
         if searchResults.count == 0 {
             return tableView.dequeueReusableCell(
-                withIdentifier:TableView.CellIdentifiers.nothingFoundCell,
+                withIdentifier:Constants.nothingFoundCell,
                 for: indexPath)
         } else {
             let cell = tableView.dequeueReusableCell(
-                withIdentifier: TableView.CellIdentifiers.searchResultCell,
+                withIdentifier: SearchResultCell.reuseIdentifier,
                 for: indexPath) as! SearchResultCell
             
             let searchResult = searchResults[indexPath.row]

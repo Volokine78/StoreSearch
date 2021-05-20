@@ -9,10 +9,12 @@ import UIKit
 
 class SearchResultCell: UITableViewCell {
     
+    static let reuseIdentifier = "SearchResultCell"
+    
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var artistNameLabel: UILabel!
-    @IBOutlet var artworkImageView: UIImageView!
-
+    @IBOutlet weak var artworkImageView: UIImageView!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         

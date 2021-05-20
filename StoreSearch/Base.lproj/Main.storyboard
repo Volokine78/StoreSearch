@@ -20,18 +20,11 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" keyboardDismissMode="interactive" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="0g4-mf-clQ">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <connections>
-                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="1fr-Bu-nVJ"/>
-                                    <outlet property="delegate" destination="BYZ-38-t0r" id="rDk-pd-cOw"/>
-                                </connections>
                             </tableView>
                             <searchBar contentMode="redraw" placeholder="App name, artist, song, album, e-book" translatesAutoresizingMaskIntoConstraints="NO" id="rWa-D2-qeW">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="51"/>
                                 <color key="barTintColor" name="SearchBar"/>
                                 <textInputTraits key="textInputTraits"/>
-                                <connections>
-                                    <outlet property="delegate" destination="BYZ-38-t0r" id="vFv-wy-nqU"/>
-                                </connections>
                             </searchBar>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -47,13 +40,13 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="searchBar" destination="rWa-D2-qeW" id="Dcq-J6-lb1"/>
+                        <outlet property="searchBar" destination="rWa-D2-qeW" id="FFo-bQ-tXs"/>
                         <outlet property="tableView" destination="0g4-mf-clQ" id="ATA-bR-773"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="174" y="86"/>
+            <point key="canvasLocation" x="183" y="86"/>
         </scene>
     </scenes>
     <resources>
