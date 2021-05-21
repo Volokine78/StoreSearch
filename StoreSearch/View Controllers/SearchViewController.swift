@@ -107,4 +107,12 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
             return indexPath
         }
     }
+    
+    // MARK: - Helper Methods
+    func iTunesURL(searchText: String) -> URL {
+        let urlString = String(
+            format: "https://itunes.apple.com/search?term=%@", searchText)
+        let url = URL(string: urlString)
+        return url!
+    }
 }
