@@ -108,8 +108,10 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
     
     // MARK: - Helper Methods
     func iTunesURL(searchText: String) -> URL {
+        let encodedText = searchText.addingPercentEncoding(
+            withAllowedCharacters: CharacterSet.urlQueryAllowed)!
         let urlString = String(
-            format: "https://itunes.apple.com/search?term=%@", searchText)
+            format: "https://itunes.apple.com/search?term=%@", encodedText)
         let url = URL(string: urlString)
         return url!
     }
