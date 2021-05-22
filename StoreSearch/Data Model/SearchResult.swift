@@ -49,6 +49,12 @@ class SearchResult: Codable, CustomStringConvertible {
         }
         return ""
     }
+    var type: String {
+        return kind ?? "audiobook"
+    }
+    var artist: String {
+        return artistName ?? ""
+    }
     
     enum CodingKeys: String, CodingKey {
         case imageSmall = "artworkUrl60"
