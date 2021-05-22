@@ -20,6 +20,12 @@ class SearchResult: Codable, CustomStringConvertible {
     var artistName: String? = ""
     var trackName: String? = ""
     var kind: String? = ""
+    var trackPrice: Double? = 0.0
+    var currency = ""
+    var artworkUrl60 = ""
+    var artworkUrl100 = ""
+    var trackViewUrl: String? = ""
+    var primaryGenreName = ""
     
     var name: String{
         return trackName ?? ""
