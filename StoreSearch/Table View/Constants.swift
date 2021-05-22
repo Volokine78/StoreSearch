@@ -9,4 +9,5 @@ import Foundation
 
 enum Constants {
     static let nothingFoundCell = "NothingFoundCell"
+    static let loadingCell = "LoadingCell"
 }

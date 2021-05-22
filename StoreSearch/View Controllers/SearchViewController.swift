@@ -29,6 +29,8 @@ class SearchViewController: UIViewController {
         tableView.register(cellNib, forCellReuseIdentifier: SearchResultCell.reuseIdentifier)
         cellNib = UINib(nibName: Constants.nothingFoundCell, bundle: nil)
         tableView.register(cellNib, forCellReuseIdentifier: Constants.nothingFoundCell)
+        cellNib = UINib(nibName: Constants.loadingCell, bundle: nil)
+        tableView.register(cellNib, forCellReuseIdentifier: Constants.loadingCell)
     }
 }
 
