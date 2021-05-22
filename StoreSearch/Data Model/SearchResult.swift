@@ -35,12 +35,15 @@ class SearchResult: Codable, CustomStringConvertible {
     var name: String {
         return trackName ?? collectionName ?? ""
     }
+    
     var storeURL: String {
         return trackViewUrl ?? collectionViewUrl ?? ""
     }
+    
     var price: Double {
         return trackPrice ?? collectionPrice ?? itemPrice ?? 0.0
     }
+    
     var genre: String {
         if let genre = itemGenre {
             return genre
@@ -49,9 +52,25 @@ class SearchResult: Codable, CustomStringConvertible {
         }
         return ""
     }
+    
     var type: String {
-        return kind ?? "audiobook"
+        let kind = self.kind ?? "audiobook"
+        switch kind {
+            case "album": return "Album"
+            case "audiobook": return "Audio Book"
+            case "book": return "Book"
+            case "ebook": return "E-Book"
+            case "feature-movie": return "Movie"
+            case "music-video": return "Music Video"
+            case "podcast": return "Podcast"
+            case "software": return "App"
+            case "song": return "Song"
+            case "tv-episode": return "TV Episode"
+            default: break
+        }
+        return "Unknown"
     }
+    
     var artist: String {
         return artistName ?? ""
     }
