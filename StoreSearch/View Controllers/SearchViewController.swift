@@ -48,7 +48,7 @@ extension SearchViewController: UISearchBarDelegate {
             
             let queue = DispatchQueue.global()
             let url = iTunesURL(searchText: searchBar.text!)
-            print("URL: '\(url)'")
+            //print("URL: '\(url)'")
             
             queue.async {
                 if let data = self.performStoreRequest(with: url) {
@@ -59,7 +59,6 @@ extension SearchViewController: UISearchBarDelegate {
                         self.isLoading = false
                         self.tableView.reloadData()
                     }
-                    return
                 }
             }
         }
