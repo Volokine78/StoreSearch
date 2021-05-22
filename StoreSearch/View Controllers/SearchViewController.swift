@@ -120,7 +120,7 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
         let encodedText = searchText.addingPercentEncoding(
             withAllowedCharacters: CharacterSet.urlQueryAllowed)!
         let urlString = String(
-            format: "https://itunes.apple.com/search?term=%@", encodedText)
+            format: "https://itunes.apple.com/search?term=%@&limit=200", encodedText)
         let url = URL(string: urlString)
         return url!
     }
