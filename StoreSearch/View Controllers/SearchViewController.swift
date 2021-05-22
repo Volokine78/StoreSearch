@@ -125,6 +125,7 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
             return try Data(contentsOf: url)
         } catch {
             print("Download Error: \(error.localizedDescription)")
+            showNetworkError()
             return nil
         }
     }
