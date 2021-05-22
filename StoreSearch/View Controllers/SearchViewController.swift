@@ -144,7 +144,7 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
     func showNetworkError() {
         let alert = UIAlertController(
             title: "Whoops...",
-            message: "There was an error accessşng the iTunes Store." + "Please try again",
+            message: "There was an error accessing the iTunes Store." + "Please try again",
             preferredStyle: .alert)
         
         let action = UIAlertAction(title: "OK", style: .default, handler: nil)
