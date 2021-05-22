@@ -45,16 +45,23 @@ extension SearchViewController: UISearchBarDelegate {
             tableView.reloadData()
             hasSearched = true
             searchResults = []
-           
+            
+            let queue = DispatchQueue.global()
             let url = iTunesURL(searchText: searchBar.text!)
             print("URL: '\(url)'")
-            if let data = performStoreRequest(with: url) {
-                searchResults = parse(data: data)
-                //print("Got results: \(searchResults)")
-                searchResults.sort(by: <)
+            
+            queue.async {
+                if let data = self.performStoreRequest(with: url) {
+                    self.searchResults = self.parse(data: data)
+                    //print("Got results: \(searchResults)")
+                    self.searchResults.sort(by: <)
+                    DispatchQueue.main.async {
+                        self.isLoading = false
+                        self.tableView.reloadData()
+                    }
+                    return
+                }
             }
-            isLoading = false
-            tableView.reloadData()
         }
     }
     
