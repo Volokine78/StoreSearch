@@ -11,9 +11,9 @@ class SearchResultCell: UITableViewCell {
     
     static let reuseIdentifier = "SearchResultCell"
     
-    @IBOutlet weak var nameLabel: UILabel!
-    @IBOutlet weak var artistNameLabel: UILabel!
-    @IBOutlet weak var artworkImageView: UIImageView!
+    @IBOutlet var nameLabel: UILabel!
+    @IBOutlet var artistNameLabel: UILabel!
+    @IBOutlet var artworkImageView: UIImageView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
