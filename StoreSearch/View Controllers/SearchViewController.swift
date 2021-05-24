@@ -52,8 +52,11 @@ extension SearchViewController: UISearchBarDelegate {
             let dataTask = session.dataTask(with: url) { data, response, error in
                 if let error = error {
                     print("Failure! \(error.localizedDescription)")
+                } else if let httpResponse = response as? HTTPURLResponse,
+                          httpResponse.statusCode == 200 {
+                    print("Success! \(data!)")
                 } else {
-                    print("Success! \(response!)")
+                    print("Failure! \(response!)")
                 }
             }
             dataTask.resume()
