@@ -21,12 +21,11 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="IkY-08-u7p">
-                                <rect key="frame" x="0.0" y="50" width="375" height="44"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9fh-RO-fUI">
+                                <rect key="frame" x="0.0" y="51" width="375" height="44"/>
                                 <items>
-                                    <barButtonItem style="plain" id="Djb-6V-YZX">
-                                        <segmentedControl key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="bn7-CI-gLE">
+                                    <barButtonItem style="plain" id="iy4-aY-8Of">
+                                        <segmentedControl key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="ReO-a5-E1w">
                                             <rect key="frame" x="16" y="5.5" width="343" height="33"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <segments>
@@ -35,6 +34,9 @@
                                                 <segment title="Software"/>
                                                 <segment title="E-books"/>
                                             </segments>
+                                            <connections>
+                                                <action selector="segmentChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="NIG-ga-VK1"/>
+                                            </connections>
                                         </segmentedControl>
                                     </barButtonItem>
                                 </items>
@@ -52,6 +54,9 @@
                             <constraint firstItem="0g4-mf-clQ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="GZK-it-8io"/>
                             <constraint firstItem="0g4-mf-clQ" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="L7p-c3-cpk"/>
                             <constraint firstItem="rWa-D2-qeW" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Lcc-nW-Fau"/>
+                            <constraint firstItem="9fh-RO-fUI" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="ZMc-6b-PgW"/>
+                            <constraint firstItem="9fh-RO-fUI" firstAttribute="top" secondItem="rWa-D2-qeW" secondAttribute="bottom" id="gyV-tk-fMf"/>
+                            <constraint firstItem="9fh-RO-fUI" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="qGC-cX-xad"/>
                             <constraint firstItem="0g4-mf-clQ" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="qGH-Hk-ocW"/>
                             <constraint firstItem="0g4-mf-clQ" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="xfo-Dl-3hE"/>
                             <constraint firstItem="rWa-D2-qeW" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="xmk-EO-pOf"/>
@@ -59,12 +64,13 @@
                     </view>
                     <connections>
                         <outlet property="searchBar" destination="rWa-D2-qeW" id="FFo-bQ-tXs"/>
+                        <outlet property="segmentedControl" destination="ReO-a5-E1w" id="ydu-YV-zW5"/>
                         <outlet property="tableView" destination="0g4-mf-clQ" id="ATA-bR-773"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="181.59999999999999" y="85.907046476761622"/>
+            <point key="canvasLocation" x="-250" y="197"/>
         </scene>
     </scenes>
     <resources>

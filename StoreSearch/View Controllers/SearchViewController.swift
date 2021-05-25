@@ -11,6 +11,7 @@ class SearchViewController: UIViewController {
     
     @IBOutlet var searchBar: UISearchBar!
     @IBOutlet var tableView: UITableView!
+    @IBOutlet var segmentedControl: UISegmentedControl!
     
     var searchResults = [SearchResult]()
     var hasSearched = false
@@ -33,6 +34,10 @@ class SearchViewController: UIViewController {
         tableView.register(cellNib, forCellReuseIdentifier: Constants.nothingFoundCell)
         cellNib = UINib(nibName: Constants.loadingCell, bundle: nil)
         tableView.register(cellNib, forCellReuseIdentifier: Constants.loadingCell)
+    }
+    
+    @IBAction func segmentChanged(_ sender: UISegmentedControl) {
+        print("Segment changed: \(sender.selectedSegmentIndex)")
     }
 }
 
