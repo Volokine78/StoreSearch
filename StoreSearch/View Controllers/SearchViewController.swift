@@ -23,7 +23,7 @@ class SearchViewController: UIViewController {
         
         searchBar.becomeFirstResponder()
         
-        tableView.contentInset = UIEdgeInsets(top: 50, left: 0, bottom: 0, right: 0)
+        tableView.contentInset = UIEdgeInsets(top: 94, left: 0, bottom: 0, right: 0)
         searchBar.delegate = self
         tableView.delegate = self
         tableView.dataSource = self
@@ -37,13 +37,17 @@ class SearchViewController: UIViewController {
     }
     
     @IBAction func segmentChanged(_ sender: UISegmentedControl) {
-        print("Segment changed: \(sender.selectedSegmentIndex)")
+        performSearch()
     }
 }
 
 // MARK: - Search Bar Delegate
 extension SearchViewController: UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        performSearch()
+    }
+    
+    func performSearch() {
         if !searchBar.text!.isEmpty {
             searchBar.resignFirstResponder()
             
