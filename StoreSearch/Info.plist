@@ -27,9 +27,9 @@
 			<key>mzstatic.com</key>
 			<dict>
 				<key>NSExceptionAllowInsecureHTTPLoads</key>
-				<false/>
+				<true/>
 				<key>NSIncludesSubdomains</key>
-				<false/>
+				<true/>
 			</dict>
 		</dict>
 	</dict>
