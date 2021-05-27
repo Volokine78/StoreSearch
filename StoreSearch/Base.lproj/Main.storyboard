@@ -9,10 +9,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Search View Controller-->
+        <!--Search-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="SearchViewController" customModule="StoreSearch" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" userLabel="Search" customClass="SearchViewController" customModule="StoreSearch" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -72,8 +72,55 @@
             </objects>
             <point key="canvasLocation" x="-250" y="197"/>
         </scene>
+        <!--Detail-->
+        <scene sceneID="JRt-nN-XcY">
+            <objects>
+                <viewController id="vVF-Z8-j6P" userLabel="Detail" customClass="DetailViewController" customModule="StoreSearch" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="nG8-Rq-Wwt">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7S4-E0-mXK" userLabel="Pop-up View">
+                                <rect key="frame" x="47.5" y="193.5" width="280" height="280"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X0r-9S-o6Y" userLabel="Close Button">
+                                        <rect key="frame" x="252" y="8" width="20" height="20"/>
+                                        <state key="normal" image="xmark.circle.fill" catalog="system">
+                                            <color key="titleColor" name="AccentColor"/>
+                                        </state>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="280" id="NgX-a0-IRd"/>
+                                    <constraint firstAttribute="height" constant="280" id="ZyK-Rp-uDX"/>
+                                    <constraint firstItem="X0r-9S-o6Y" firstAttribute="top" secondItem="7S4-E0-mXK" secondAttribute="top" constant="8" id="dhr-tB-ATI"/>
+                                    <constraint firstAttribute="trailing" secondItem="X0r-9S-o6Y" secondAttribute="trailing" constant="8" id="vtG-Si-FEz"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="VDp-ms-oub"/>
+                        <color key="backgroundColor" name="ArtistName"/>
+                        <constraints>
+                            <constraint firstItem="7S4-E0-mXK" firstAttribute="centerX" secondItem="nG8-Rq-Wwt" secondAttribute="centerX" id="Cr7-6h-VRZ"/>
+                            <constraint firstItem="7S4-E0-mXK" firstAttribute="centerY" secondItem="nG8-Rq-Wwt" secondAttribute="centerY" id="qLS-17-oLe"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Uba-fS-iYx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="466" y="197"/>
+        </scene>
     </scenes>
+    <color key="tintColor" name="AccentColor"/>
     <resources>
+        <image name="xmark.circle.fill" catalog="system" width="128" height="121"/>
+        <namedColor name="AccentColor">
+            <color red="0.039215686274509803" green="0.31372549019607843" blue="0.31372549019607843" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="ArtistName">
+            <color red="0.0" green="0.0" blue="0.0" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <namedColor name="SearchBar">
             <color red="0.70588235294117652" green="0.94117647058823528" blue="0.82352941176470584" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
