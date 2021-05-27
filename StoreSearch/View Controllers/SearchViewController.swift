@@ -39,6 +39,13 @@ class SearchViewController: UIViewController {
     @IBAction func segmentChanged(_ sender: UISegmentedControl) {
         performSearch()
     }
+    
+    // MARK: - Navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "ShowDetail" {
+            segue.destination.modalPresentationStyle = .pageSheet
+        }
+    }
 }
 
 // MARK: - Search Bar Delegate

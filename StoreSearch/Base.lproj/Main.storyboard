@@ -66,7 +66,7 @@
                         <outlet property="searchBar" destination="rWa-D2-qeW" id="FFo-bQ-tXs"/>
                         <outlet property="segmentedControl" destination="ReO-a5-E1w" id="ydu-YV-zW5"/>
                         <outlet property="tableView" destination="0g4-mf-clQ" id="ATA-bR-773"/>
-                        <segue destination="vVF-Z8-j6P" kind="presentation" identifier="ShowDetail" id="mC0-ag-5Kl"/>
+                        <segue destination="vVF-Z8-j6P" kind="presentation" identifier="ShowDetail" modalPresentationStyle="pageSheet" id="mC0-ag-5Kl"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
