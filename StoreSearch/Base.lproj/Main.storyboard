@@ -157,6 +157,9 @@
                                                         <rect key="frame" x="187" y="0.0" width="61" height="24"/>
                                                         <inset key="contentEdgeInsets" minX="10" minY="0.0" maxX="10" maxY="0.0"/>
                                                         <state key="normal" title="$9.99" backgroundImage="PriceButton"/>
+                                                        <connections>
+                                                            <action selector="openInStore" destination="vVF-Z8-j6P" eventType="touchUpInside" id="Ovi-x1-oDi"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                             </stackView>
