@@ -66,6 +66,7 @@
                         <outlet property="searchBar" destination="rWa-D2-qeW" id="FFo-bQ-tXs"/>
                         <outlet property="segmentedControl" destination="ReO-a5-E1w" id="ydu-YV-zW5"/>
                         <outlet property="tableView" destination="0g4-mf-clQ" id="ATA-bR-773"/>
+                        <segue destination="vVF-Z8-j6P" kind="presentation" identifier="ShowDetail" id="mC0-ag-5Kl"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -77,17 +78,20 @@
             <objects>
                 <viewController id="vVF-Z8-j6P" userLabel="Detail" customClass="DetailViewController" customModule="StoreSearch" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="nG8-Rq-Wwt">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7S4-E0-mXK" userLabel="Pop-up View">
-                                <rect key="frame" x="47.5" y="193.5" width="280" height="280"/>
+                                <rect key="frame" x="47.5" y="183.5" width="280" height="280"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X0r-9S-o6Y" userLabel="Close Button">
                                         <rect key="frame" x="252" y="8" width="20" height="20"/>
                                         <state key="normal" image="xmark.circle.fill" catalog="system">
                                             <color key="titleColor" name="AccentColor"/>
                                         </state>
+                                        <connections>
+                                            <action selector="close" destination="vVF-Z8-j6P" eventType="touchUpInside" id="fzr-yW-Y7z"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
