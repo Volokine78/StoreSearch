@@ -53,7 +53,8 @@ class BounceAnimationController: NSObject, UIViewControllerAnimatedTransitioning
                 },
                 completion: { finished in
                     transitionContext.completeTransition(finished)
-                })
+                }
+            )
         }
     }
 }
