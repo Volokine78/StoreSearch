@@ -113,7 +113,7 @@ class SearchViewController: UIViewController {
     func showLandscape(with coordinator: UIViewControllerTransitionCoordinator) {
         guard landscapeVC == nil else { return }
         
-        landscapeVC = storyboard?.instantiateViewController(
+        landscapeVC = storyboard!.instantiateViewController(
             withIdentifier: "LandscapeViewController") as? LandscapeViewController
         if let controller = landscapeVC {
             controller.view.frame = view.bounds
@@ -124,7 +124,12 @@ class SearchViewController: UIViewController {
     }
     
     func hideLandscape(with coordinator: UIViewControllerTransitionCoordinator) {
-        
+        if let controller = landscapeVC {
+            controller.willMove(toParent: nil)
+            controller.view.removeFromSuperview()
+            controller.removeFromParent()
+            landscapeVC = nil
+        }
     }
 }
 
