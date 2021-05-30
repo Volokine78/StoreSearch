@@ -37,8 +37,20 @@ class SearchViewController: UIViewController {
         tableView.register(cellNib, forCellReuseIdentifier: Constants.loadingCell)
     }
     
-    @IBAction func segmentChanged(_ sender: UISegmentedControl) {
-        performSearch()
+    override func willTransition(
+        to newCollection: UITraitCollection,
+        with coordinator: UIViewControllerTransitionCoordinator
+    ) {
+        super.willTransition(to: newCollection, with: coordinator)
+        
+        switch newCollection.verticalSizeClass {
+            case .compact:
+                showLandscape(with: coordinator)
+            case .regular, .unspecified:
+                hideLandscape(with: coordinator)
+            @unknown default:
+                break
+        }
     }
     
     // MARK: - Navigation
@@ -50,6 +62,69 @@ class SearchViewController: UIViewController {
             let searchResult = searchResults[indexPath.row]
             detailViewController.searchResult = searchResult
         }
+    }
+    
+    // MARK: - Actions
+    @IBAction func segmentChanged(_ sender: UISegmentedControl) {
+        performSearch()
+    }
+    
+    // MARK: - Helper Methods
+    func iTunesURL(searchText: String, category: Int) -> URL {
+        let kind: String
+        switch category {
+            case 1: kind = "musicTrack"
+            case 2: kind = "software"
+            case 3: kind = "ebook"
+            default: kind = ""
+        }
+        
+        let encodedText = searchText.addingPercentEncoding(
+            withAllowedCharacters: CharacterSet.urlQueryAllowed)!
+        let urlString = "https://itunes.apple.com/search?" +
+                "term=\(encodedText)&limit=200&entity=\(kind)"
+        
+        let url = URL(string: urlString)
+        return url!
+    }
+    
+    func parse(data: Data) -> [SearchResult] {
+        do {
+            let decoder = JSONDecoder()
+            let result = try decoder.decode(ResultArray.self, from: data)
+            return result.results
+        } catch {
+            print("JSON Error: \(error)")
+            return []
+        }
+    }
+    
+    func showNetworkError() {
+        let alert = UIAlertController(
+            title: "Whoops...",
+            message: "There was an error accessing the iTunes Store." + "Please try again",
+            preferredStyle: .alert)
+        
+        let action = UIAlertAction(title: "OK", style: .default, handler: nil)
+        alert.addAction(action)
+        present(alert, animated: true, completion: nil)
+    }
+    
+    func showLandscape(with coordinator: UIViewControllerTransitionCoordinator) {
+        guard landscapeVC == nil else { return }
+        
+        landscapeVC = storyboard?.instantiateViewController(
+            withIdentifier: "LandscapeViewController") as? LandscapeViewController
+        if let controller = landscapeVC {
+            controller.view.frame = view.bounds
+            view.addSubview(controller.view)
+            addChild(controller)
+            controller.didMove(toParent: self)
+        }
+    }
+    
+    func hideLandscape(with coordinator: UIViewControllerTransitionCoordinator) {
+        
     }
 }
 
@@ -169,46 +244,5 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
         } else {
             return indexPath
         }
-    }
-    
-    // MARK: - Helper Methods
-    func iTunesURL(searchText: String, category: Int) -> URL {
-        let kind: String
-        switch category {
-            case 1: kind = "musicTrack"
-            case 2: kind = "software"
-            case 3: kind = "ebook"
-            default: kind = ""
-        }
-        
-        let encodedText = searchText.addingPercentEncoding(
-            withAllowedCharacters: CharacterSet.urlQueryAllowed)!
-        let urlString = "https://itunes.apple.com/search?" +
-                "term=\(encodedText)&limit=200&entity=\(kind)"
-        
-        let url = URL(string: urlString)
-        return url!
-    }
-    
-    func parse(data: Data) -> [SearchResult] {
-        do {
-            let decoder = JSONDecoder()
-            let result = try decoder.decode(ResultArray.self, from: data)
-            return result.results
-        } catch {
-            print("JSON Error: \(error)")
-            return []
-        }
-    }
-    
-    func showNetworkError() {
-        let alert = UIAlertController(
-            title: "Whoops...",
-            message: "There was an error accessing the iTunes Store." + "Please try again",
-            preferredStyle: .alert)
-        
-        let action = UIAlertAction(title: "OK", style: .default, handler: nil)
-        alert.addAction(action)
-        present(alert, animated: true, completion: nil)
     }
 }
