@@ -17,6 +17,7 @@ class SearchViewController: UIViewController {
     var hasSearched = false
     var isLoading = false
     var dataTask: URLSessionDataTask?
+    var landscapeVC: LandscapeViewController?
     
     override func viewDidLoad() {
         super.viewDidLoad()
