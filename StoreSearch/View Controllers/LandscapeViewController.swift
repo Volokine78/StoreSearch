@@ -11,6 +11,8 @@ class LandscapeViewController: UIViewController {
     
     @IBOutlet var scrollView: UIScrollView!
     @IBOutlet var pageControl: UIPageControl!
+    
+    var searchResults = [SearchResult]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,8 +28,6 @@ class LandscapeViewController: UIViewController {
         
         view.backgroundColor = UIColor(
             patternImage: UIImage(named: "LandscapeBackground")!)
-        
-        scrollView.contentSize = CGSize(width: 1000, height: 1000)
     }
     
     override func viewWillLayoutSubviews() {
