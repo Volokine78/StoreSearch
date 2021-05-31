@@ -91,8 +91,8 @@ class LandscapeViewController: UIViewController {
         var column = 0
         var x = marginX
         for (index, _) in searchResults.enumerated() {
-            let button = UIButton(type: .system)
-            button.backgroundColor = UIColor.white
+            let button = UIButton(type: .custom)
+            button.setBackgroundImage(UIImage(named: "LandscapeButton"), for: .normal)
             button.setTitle("\(index)", for: .normal)
             
             button.frame = CGRect(
