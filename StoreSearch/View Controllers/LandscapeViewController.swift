@@ -18,6 +18,8 @@ class LandscapeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        scrollView.delegate = self
+        
         view.removeConstraints(view.constraints)
         view.translatesAutoresizingMaskIntoConstraints = true
         
@@ -47,6 +49,20 @@ class LandscapeViewController: UIViewController {
             firstTime = false
             tileButtons(searchResults)
         }
+    }
+    
+    // MARK: - Actions
+    @IBAction func pageChanged(_ sender: UIPageControl) {
+        UIView.animate(
+            withDuration: 0.3,
+            delay: 0,
+            options: [.curveEaseOut],
+            animations: {
+                self.scrollView.contentOffset = CGPoint(
+                    x: self.scrollView.bounds.size.width * CGFloat(sender.currentPage),
+                    y: 0)
+            },
+            completion: nil)
     }
     
     // MARK: - Private Methods
@@ -106,5 +122,14 @@ class LandscapeViewController: UIViewController {
         pageControl.currentPage = 0
         
         print("Number of pages: \(numPages)")
+    }
+}
+
+// MARK: - Scroll View Delegate
+extension LandscapeViewController: UIScrollViewDelegate {
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let width = scrollView.bounds.size.width
+        let page = Int((scrollView.contentOffset.x + width / 2) / width)
+        pageControl.currentPage = page
     }
 }
