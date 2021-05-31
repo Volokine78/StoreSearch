@@ -16,6 +16,7 @@
 		B992D8262659B0BB005980CD /* LoadingCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B992D8252659B0BB005980CD /* LoadingCell.xib */; };
 		B99734072653337B00809E84 /* NothingFoundCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B99734062653337B00809E84 /* NothingFoundCell.xib */; };
 		B9B6919A26644B4C005492FA /* LandscapeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9B6919926644B4C005492FA /* LandscapeViewController.swift */; };
+		B9B6919C266467B5005492FA /* FadeOutAnimationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9B6919B266467B5005492FA /* FadeOutAnimationController.swift */; };
 		B9CB94382653263800139580 /* SearchResultCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9CB94372653263800139580 /* SearchResultCell.swift */; };
 		B9D5A93B264F0B5500F920D7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9D5A93A264F0B5500F920D7 /* AppDelegate.swift */; };
 		B9D5A93D264F0B5500F920D7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9D5A93C264F0B5500F920D7 /* SceneDelegate.swift */; };
@@ -36,6 +37,7 @@
 		B992D8252659B0BB005980CD /* LoadingCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoadingCell.xib; sourceTree = "<group>"; };
 		B99734062653337B00809E84 /* NothingFoundCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NothingFoundCell.xib; sourceTree = "<group>"; };
 		B9B6919926644B4C005492FA /* LandscapeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandscapeViewController.swift; sourceTree = "<group>"; };
+		B9B6919B266467B5005492FA /* FadeOutAnimationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FadeOutAnimationController.swift; sourceTree = "<group>"; };
 		B9CB94372653263800139580 /* SearchResultCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultCell.swift; sourceTree = "<group>"; };
 		B9D5A937264F0B5500F920D7 /* StoreSearch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StoreSearch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B9D5A93A264F0B5500F920D7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -77,6 +79,7 @@
 				B9385A3E2661B4E4001E8891 /* GradientView.swift */,
 				B9385A402661BD8E001E8891 /* BounceAnimationController.swift */,
 				B9385A422661C720001E8891 /* SlideOutAnimationController.swift */,
+				B9B6919B266467B5005492FA /* FadeOutAnimationController.swift */,
 				B93D1F2126530A91005B43F0 /* SearchResultCell.xib */,
 				B99734062653337B00809E84 /* NothingFoundCell.xib */,
 				B992D8252659B0BB005980CD /* LoadingCell.xib */,
@@ -205,6 +208,7 @@
 				B9CB94382653263800139580 /* SearchResultCell.swift in Sources */,
 				B93612172655CA0F007347FF /* Constants.swift in Sources */,
 				B9385A432661C720001E8891 /* SlideOutAnimationController.swift in Sources */,
+				B9B6919C266467B5005492FA /* FadeOutAnimationController.swift in Sources */,
 				B9E8EA76265F13A800EB47B5 /* DetailViewController.swift in Sources */,
 				B9B6919A26644B4C005492FA /* LandscapeViewController.swift in Sources */,
 				B9385A3F2661B4E4001E8891 /* GradientView.swift in Sources */,
