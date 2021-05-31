@@ -102,6 +102,7 @@ class DetailViewController: UIViewController {
     }
 }
 
+// MARK: - Gesture Recognizer Delegate
 extension DetailViewController: UIGestureRecognizerDelegate {
     func gestureRecognizer(
         _ gestureRecognizer: UIGestureRecognizer,
@@ -111,6 +112,7 @@ extension DetailViewController: UIGestureRecognizerDelegate {
     }
 }
 
+// MARK: - View Controller Transition Delegate
 extension DetailViewController: UIViewControllerTransitioningDelegate {
     func animationController(
         forPresented presented: UIViewController,
@@ -123,6 +125,11 @@ extension DetailViewController: UIViewControllerTransitioningDelegate {
     func animationController(
         forDismissed dismissed: UIViewController
     ) -> UIViewControllerAnimatedTransitioning? {
-        return SlideOutAnimationController()
+        switch dismissStyle {
+            case .slide:
+                return SlideOutAnimationController()
+            case .fade:
+                return FadeOutAnimationController()
+        }
     }
 }
