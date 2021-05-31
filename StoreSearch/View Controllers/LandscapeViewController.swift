@@ -24,4 +24,15 @@ class LandscapeViewController: UIViewController {
         scrollView.removeConstraints(scrollView.constraints)
         scrollView.translatesAutoresizingMaskIntoConstraints = true
     }
+    
+    override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
+        let safeFrame = view.safeAreaLayoutGuide.layoutFrame
+        scrollView.frame = safeFrame
+        pageControl.frame = CGRect(
+            x: safeFrame.origin.x,
+            y: safeFrame.size.height - pageControl.frame.size.height,
+            width: safeFrame.size.width,
+            height: pageControl.frame.size.height)
+    }
 }
