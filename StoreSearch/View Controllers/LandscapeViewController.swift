@@ -29,6 +29,8 @@ class LandscapeViewController: UIViewController {
         
         view.backgroundColor = UIColor(
             patternImage: UIImage(named: "LandscapeBackground")!)
+        
+        pageControl.numberOfPages = 0
     }
     
     override func viewWillLayoutSubviews() {
@@ -99,6 +101,9 @@ class LandscapeViewController: UIViewController {
         scrollView.contentSize = CGSize(
             width: CGFloat(numPages) * viewWidth,
             height: scrollView.bounds.size.height)
+        
+        pageControl.numberOfPages = numPages
+        pageControl.currentPage = 0
         
         print("Number of pages: \(numPages)")
     }
