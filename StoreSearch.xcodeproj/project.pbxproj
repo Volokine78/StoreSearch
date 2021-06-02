@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B9071BD82668115C006959B9 /* Search.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9071BD72668115C006959B9 /* Search.swift */; };
 		B93612172655CA0F007347FF /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B93612162655CA0F007347FF /* Constants.swift */; };
 		B9385A3F2661B4E4001E8891 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9385A3E2661B4E4001E8891 /* GradientView.swift */; };
 		B9385A412661BD8E001E8891 /* BounceAnimationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9385A402661BD8E001E8891 /* BounceAnimationController.swift */; };
@@ -28,6 +29,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B9071BD72668115C006959B9 /* Search.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Search.swift; sourceTree = "<group>"; };
 		B93612162655CA0F007347FF /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		B9385A3E2661B4E4001E8891 /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 		B9385A402661BD8E001E8891 /* BounceAnimationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BounceAnimationController.swift; sourceTree = "<group>"; };
@@ -65,6 +67,7 @@
 			isa = PBXGroup;
 			children = (
 				B96ABDF7264F48D700AF4250 /* SearchResult.swift */,
+				B9071BD72668115C006959B9 /* Search.swift */,
 			);
 			path = "Data Model";
 			sourceTree = "<group>";
@@ -212,6 +215,7 @@
 				B9E8EA76265F13A800EB47B5 /* DetailViewController.swift in Sources */,
 				B9B6919A26644B4C005492FA /* LandscapeViewController.swift in Sources */,
 				B9385A3F2661B4E4001E8891 /* GradientView.swift in Sources */,
+				B9071BD82668115C006959B9 /* Search.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
