@@ -66,8 +66,8 @@
 		B96ABDF6264F485F00AF4250 /* Data Model */ = {
 			isa = PBXGroup;
 			children = (
-				B96ABDF7264F48D700AF4250 /* SearchResult.swift */,
 				B9071BD72668115C006959B9 /* Search.swift */,
+				B96ABDF7264F48D700AF4250 /* SearchResult.swift */,
 			);
 			path = "Data Model";
 			sourceTree = "<group>";
