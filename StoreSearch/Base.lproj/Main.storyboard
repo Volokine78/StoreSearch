@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina4_7" orientation="landscape" appearance="dark"/>
+    <device id="retina4_7" orientation="landscape" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -200,10 +201,11 @@
                                             </stackView>
                                         </subviews>
                                     </stackView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X0r-9S-o6Y" userLabel="Close Button">
-                                        <rect key="frame" x="575" y="8" width="20" height="20"/>
-                                        <state key="normal" image="xmark.circle.fill" catalog="system">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X0r-9S-o6Y" userLabel="Close Button">
+                                        <rect key="frame" x="579" y="8" width="16" height="18"/>
+                                        <state key="normal">
                                             <color key="titleColor" name="AccentColor"/>
+                                            <imageReference key="image" image="xmark.circle.fill" catalog="system" symbolScale="default"/>
                                         </state>
                                         <connections>
                                             <action selector="close" destination="vVF-Z8-j6P" eventType="touchUpInside" id="fzr-yW-Y7z"/>
@@ -235,6 +237,7 @@
                     <connections>
                         <outlet property="artistNameLabel" destination="nTL-aN-Z0N" id="TLc-Im-7IL"/>
                         <outlet property="artworkImageView" destination="qkh-tc-CTO" id="nrl-yF-7vE"/>
+                        <outlet property="closeButton" destination="X0r-9S-o6Y" id="9hY-6u-b47"/>
                         <outlet property="genreLabel" destination="Hla-0V-CEF" id="VbZ-8M-iZC"/>
                         <outlet property="kindLabel" destination="Drk-iP-sCo" id="Okz-d7-FrL"/>
                         <outlet property="nameLabel" destination="L5d-5s-VU6" id="Xly-8d-SCC"/>

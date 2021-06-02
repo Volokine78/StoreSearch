@@ -16,6 +16,7 @@ class DetailViewController: UIViewController {
     @IBOutlet var kindLabel: UILabel!
     @IBOutlet var genreLabel: UILabel!
     @IBOutlet var priceButton: UIButton!
+    @IBOutlet var closeButton: UIButton!
     
     enum AnimationStyle {
         case slide
@@ -44,6 +45,16 @@ class DetailViewController: UIViewController {
         let dimmingView = GradientView(frame: CGRect.zero)
         dimmingView.frame = view.bounds
         view.insertSubview(dimmingView, at: 0)
+        
+        let nc = NotificationCenter.default
+        nc.addObserver(
+            self,
+            selector: #selector(applicationWillResignActive),
+            name: UIApplication.willResignActiveNotification,
+            object: nil)
+        
+        priceButton.titleLabel?.adjustsFontForContentSizeCategory = true
+        //closeButton.imageView?.adjustsImageSizeForAccessibilityContentSizeCategory = true
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -99,6 +110,10 @@ class DetailViewController: UIViewController {
         if let largeURL = URL(string: searchResult.imageLarge) {
             downloadTask = artworkImageView.loadImage(url: largeURL)
         }
+    }
+    
+    @objc func applicationWillResignActive() {
+        close()
     }
 }
 
