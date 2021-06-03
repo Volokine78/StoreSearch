@@ -16,10 +16,17 @@ class Search {
     
     private var dataTask: URLSessionDataTask?
     
+    enum Category: Int {
+        case all = 0
+        case music = 1
+        case software = 2
+        case ebooks = 3
+    }
+    
     // MARK: - Helper Methods
     func performSearch(
         for text: String,
-        category: Int,
+        category: Category,
         completion: @escaping SearchComplete) {
         
         if !text.isEmpty {
@@ -61,13 +68,13 @@ class Search {
         }
     }
 
-    private func iTunesURL(searchText: String, category: Int) -> URL {
+    private func iTunesURL(searchText: String, category: Category) -> URL {
         let kind: String
         switch category {
-            case 1: kind = "musicTrack"
-            case 2: kind = "software"
-            case 3: kind = "ebook"
-            default: kind = ""
+            case .all: kind = ""
+            case .music: kind = "musicTrack"
+            case .software: kind = "software"
+            case .ebooks: kind = "ebook"
         }
         
         let encodedText = searchText.addingPercentEncoding(
