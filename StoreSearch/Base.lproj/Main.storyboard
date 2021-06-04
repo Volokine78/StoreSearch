@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina4_7" orientation="landscape" appearance="light"/>
+    <device id="retina4_7" orientation="landscape" appearance="dark"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Image references" minToolsVersion="12.0"/>
@@ -26,7 +26,7 @@
                                 <rect key="frame" x="0.0" y="51" width="667" height="32"/>
                                 <items>
                                     <barButtonItem style="plain" id="iy4-aY-8Of">
-                                        <segmentedControl key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="ReO-a5-E1w">
+                                        <segmentedControl key="customView" opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="ReO-a5-E1w">
                                             <rect key="frame" x="20" y="0.0" width="627" height="32"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <segments>
@@ -102,11 +102,12 @@
                     <connections>
                         <outlet property="pageControl" destination="Vbz-H0-fdl" id="sLg-ck-bd5"/>
                         <outlet property="scrollView" destination="3G6-jw-4t9" id="f6h-iX-Q8g"/>
+                        <segue destination="vVF-Z8-j6P" kind="presentation" identifier="ShowDetail" id="2ia-SA-C7V"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="deC-Rz-etu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1258" y="196"/>
+            <point key="canvasLocation" x="-251" y="1118"/>
         </scene>
         <!--Detail-->
         <scene sceneID="JRt-nN-XcY">
@@ -247,9 +248,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Uba-fS-iYx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="538" y="197"/>
+            <point key="canvasLocation" x="534" y="660"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="2ia-SA-C7V"/>
+    </inferredMetricsTieBreakers>
     <color key="tintColor" name="AccentColor"/>
     <resources>
         <image name="PriceButton" width="11" height="10"/>
