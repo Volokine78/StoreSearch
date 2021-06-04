@@ -21,6 +21,15 @@ class Search {
         case music = 1
         case software = 2
         case ebooks = 3
+        
+        var type: String {
+            switch self {
+                case .all: return ""
+                case .music: return "musicTrack"
+                case .software: return "software"
+                case .ebooks: return "ebook"
+            }
+        }
     }
     
     // MARK: - Helper Methods
@@ -69,13 +78,7 @@ class Search {
     }
 
     private func iTunesURL(searchText: String, category: Category) -> URL {
-        let kind: String
-        switch category {
-            case .all: kind = ""
-            case .music: kind = "musicTrack"
-            case .software: kind = "software"
-            case .ebooks: kind = "ebook"
-        }
+        let kind = category.type
         
         let encodedText = searchText.addingPercentEncoding(
             withAllowedCharacters: CharacterSet.urlQueryAllowed)!
