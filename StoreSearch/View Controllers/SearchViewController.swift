@@ -53,11 +53,13 @@ class SearchViewController: UIViewController {
     // MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "ShowDetail" {
-            segue.destination.modalPresentationStyle = .pageSheet
-            let detailViewController = segue.destination as! DetailViewController
-            let indexPath = sender as! IndexPath
-            let searchResult = search.searchResults[indexPath.row]
-            detailViewController.searchResult = searchResult
+            if case .results(let list) = search.state {
+                segue.destination.modalPresentationStyle = .pageSheet
+                let detailViewController = segue.destination as! DetailViewController
+                let indexPath = sender as! IndexPath
+                let searchResult = list[indexPath.row]
+                detailViewController.searchResult = searchResult
+            }
         }
     }
     
@@ -154,14 +156,15 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
         _ tableView: UITableView,
         numberOfRowsInSection section: Int
     ) -> Int {
-        if search.isLoading {
-            return 1
-        } else if !search.hasSearched {
-            return 0
-        } else if search.searchResults.count == 0 {
-            return 1
-        } else {
-            return search.searchResults.count
+        switch search.state {
+            case .notSearchedYet:
+                return 0
+            case .loading:
+                return 1
+            case .noResults:
+                return 1
+            case .results(let list):
+                return list.count
         }
     }
     
@@ -169,27 +172,30 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
         _ tableView: UITableView,
         cellForRowAt indexPath: IndexPath
     ) -> UITableViewCell {
-        if search.isLoading {
-            let cell = tableView.dequeueReusableCell(
-                withIdentifier: Constants.loadingCell,
-                for: indexPath)
+        switch search.state {
+            case .notSearchedYet:
+                fatalError("Should never get here")
             
-            let spinner = cell.viewWithTag(100) as! UIActivityIndicatorView
-            spinner.startAnimating()
-            return cell
-            
-        } else if search.searchResults.count == 0 {
-            return tableView.dequeueReusableCell(
-                withIdentifier:Constants.nothingFoundCell,
-                for: indexPath)
-        } else {
-            let cell = tableView.dequeueReusableCell(
-                withIdentifier: SearchResultCell.reuseIdentifier,
-                for: indexPath) as! SearchResultCell
-            
-            let searchResult = search.searchResults[indexPath.row]
-            cell.configure(for: searchResult)
-            return cell
+            case .loading:
+                let cell = tableView.dequeueReusableCell(
+                    withIdentifier: Constants.loadingCell,
+                    for: indexPath)
+                let spinner = cell.viewWithTag(100) as! UIActivityIndicatorView
+                spinner.startAnimating()
+                return cell
+                
+            case .noResults:
+                return tableView.dequeueReusableCell(
+                    withIdentifier: Constants.nothingFoundCell,
+                    for: indexPath)
+                
+            case .results(let list):
+                let cell = tableView.dequeueReusableCell(
+                    withIdentifier: SearchResultCell.reuseIdentifier,
+                    for: indexPath) as! SearchResultCell
+                let searchResult = list[indexPath.row]
+                cell.configure(for: searchResult)
+                return cell
         }
     }
     
@@ -206,10 +212,11 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
         _ tableView: UITableView,
         willSelectRowAt indexPath: IndexPath
     ) -> IndexPath? {
-        if search.searchResults.count == 0 || search.isLoading {
-            return nil
-        } else {
-            return indexPath
+        switch search.state {
+            case .notSearchedYet, .loading, .noResults:
+                return nil
+            case .results:
+                return indexPath
         }
     }
 }
