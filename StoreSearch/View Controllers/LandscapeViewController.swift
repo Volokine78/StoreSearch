@@ -171,6 +171,22 @@ class LandscapeViewController: UIViewController {
         view.addSubview(spinner)
         spinner.startAnimating()
     }
+    
+    // MARK Helper Methods
+    func searchResultsReceived() {
+        hideSpinner()
+        
+        switch search.state {
+            case .notSearchedYet, .loading, .noResults:
+                break
+            case .results(let list):
+                tileButtons(list)
+        }
+    }
+    
+    private func hideSpinner() {
+        view.viewWithTag(1000)?.removeFromSuperview()
+    }
 }
 
 // MARK: - Scroll View Delegate
