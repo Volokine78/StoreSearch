@@ -134,18 +134,19 @@ extension SearchViewController: UISearchBarDelegate {
     func performSearch() {
         if let category = Search.Category(
             rawValue: segmentedControl.selectedSegmentIndex) {
+            
             search.performSearch(
                 for: searchBar.text!,
                 category: category) { success in
-            if !success {
-                self.showNetworkError()
+                if !success {
+                    self.showNetworkError()
+                }
+                self.tableView.reloadData()
+                self.landscapeVC?.searchResultsReceived()
             }
-            self.tableView.reloadData()
-            self.landscapeVC?.searchResultsReceived()
-        }
-        
-        tableView.reloadData()
-        searchBar.resignFirstResponder()
+            
+            tableView.reloadData()
+            searchBar.resignFirstResponder()
         }
     }
     
