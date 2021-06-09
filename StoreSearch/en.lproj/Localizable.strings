@@ -33,5 +33,14 @@
 /* Localized kind: Song */
 "Song" = "Song";
 
+/* Network error message */
+"There was an error accessing the iTunes Store. Please try again." = "There was an error accessing the iTunes Store. Please try again.";
+
 /* Localized kind: TV Episode */
 "TV Episode" = "TV Episode";
+
+/* Artist name: Unknown */
+"Unknown" = "Unknown";
+
+/* Network error Alert title */
+"Whoops..." = "Whoops...";
