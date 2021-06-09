@@ -19,6 +19,7 @@
 		B9BC24C526715B8600500206 /* LoadingCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B9BC24C726715B8600500206 /* LoadingCell.xib */; };
 		B9BC24CC2671622100500206 /* SearchResultCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B9BC24CE2671622100500206 /* SearchResultCell.xib */; };
 		B9BC24D62671715700500206 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = B9BC24D82671715700500206 /* Localizable.strings */; };
+		B9BC24E0267182BA00500206 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = B9BC24E2267182BA00500206 /* InfoPlist.strings */; };
 		B9CB94382653263800139580 /* SearchResultCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9CB94372653263800139580 /* SearchResultCell.swift */; };
 		B9D5A93B264F0B5500F920D7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9D5A93A264F0B5500F920D7 /* AppDelegate.swift */; };
 		B9D5A93D264F0B5500F920D7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9D5A93C264F0B5500F920D7 /* SceneDelegate.swift */; };
@@ -47,6 +48,8 @@
 		B9BC24D92671727800500206 /* nl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nl; path = nl.lproj/Localizable.strings; sourceTree = "<group>"; };
 		B9BC24DC26717D4200500206 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
 		B9BC24DD26717D5000500206 /* nl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nl; path = nl.lproj/Main.strings; sourceTree = "<group>"; };
+		B9BC24E1267182BA00500206 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		B9BC24E3267182BF00500206 /* nl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nl; path = nl.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		B9CB94372653263800139580 /* SearchResultCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultCell.swift; sourceTree = "<group>"; };
 		B9D5A937264F0B5500F920D7 /* StoreSearch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StoreSearch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B9D5A93A264F0B5500F920D7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -125,6 +128,7 @@
 				B9D5A943264F0B5600F920D7 /* Assets.xcassets */,
 				B9D5A948264F0B5600F920D7 /* Info.plist */,
 				B9BC24D82671715700500206 /* Localizable.strings */,
+				B9BC24E2267182BA00500206 /* InfoPlist.strings */,
 			);
 			path = StoreSearch;
 			sourceTree = "<group>";
@@ -197,6 +201,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B9D5A944264F0B5600F920D7 /* Assets.xcassets in Resources */,
+				B9BC24E0267182BA00500206 /* InfoPlist.strings in Resources */,
 				B9BC24D62671715700500206 /* Localizable.strings in Resources */,
 				B9BC24C526715B8600500206 /* LoadingCell.xib in Resources */,
 				B9BC24CC2671622100500206 /* SearchResultCell.xib in Resources */,
@@ -265,6 +270,15 @@
 				B9BC24D92671727800500206 /* nl */,
 			);
 			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+		B9BC24E2267182BA00500206 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B9BC24E1267182BA00500206 /* en */,
+				B9BC24E3267182BF00500206 /* nl */,
+			);
+			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
 		B9D5A940264F0B5500F920D7 /* Main.storyboard */ = {
