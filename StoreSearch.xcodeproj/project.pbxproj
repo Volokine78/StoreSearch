@@ -15,9 +15,9 @@
 		B93D1F2226530A91005B43F0 /* SearchResultCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B93D1F2126530A91005B43F0 /* SearchResultCell.xib */; };
 		B96ABDF8264F48D700AF4250 /* SearchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = B96ABDF7264F48D700AF4250 /* SearchResult.swift */; };
 		B992D8262659B0BB005980CD /* LoadingCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B992D8252659B0BB005980CD /* LoadingCell.xib */; };
-		B99734072653337B00809E84 /* NothingFoundCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B99734062653337B00809E84 /* NothingFoundCell.xib */; };
 		B9B6919A26644B4C005492FA /* LandscapeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9B6919926644B4C005492FA /* LandscapeViewController.swift */; };
 		B9B6919C266467B5005492FA /* FadeOutAnimationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9B6919B266467B5005492FA /* FadeOutAnimationController.swift */; };
+		B9BC24C1267157E300500206 /* NothingFoundCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B9BC24C3267157E300500206 /* NothingFoundCell.xib */; };
 		B9CB94382653263800139580 /* SearchResultCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9CB94372653263800139580 /* SearchResultCell.swift */; };
 		B9D5A93B264F0B5500F920D7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9D5A93A264F0B5500F920D7 /* AppDelegate.swift */; };
 		B9D5A93D264F0B5500F920D7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9D5A93C264F0B5500F920D7 /* SceneDelegate.swift */; };
@@ -37,9 +37,10 @@
 		B93D1F2126530A91005B43F0 /* SearchResultCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchResultCell.xib; sourceTree = "<group>"; };
 		B96ABDF7264F48D700AF4250 /* SearchResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResult.swift; sourceTree = "<group>"; };
 		B992D8252659B0BB005980CD /* LoadingCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoadingCell.xib; sourceTree = "<group>"; };
-		B99734062653337B00809E84 /* NothingFoundCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NothingFoundCell.xib; sourceTree = "<group>"; };
 		B9B6919926644B4C005492FA /* LandscapeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandscapeViewController.swift; sourceTree = "<group>"; };
 		B9B6919B266467B5005492FA /* FadeOutAnimationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FadeOutAnimationController.swift; sourceTree = "<group>"; };
+		B9BC24C2267157E300500206 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/NothingFoundCell.xib; sourceTree = "<group>"; };
+		B9BC24C4267158A100500206 /* nl */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = nl; path = nl.lproj/NothingFoundCell.xib; sourceTree = "<group>"; };
 		B9CB94372653263800139580 /* SearchResultCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultCell.swift; sourceTree = "<group>"; };
 		B9D5A937264F0B5500F920D7 /* StoreSearch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StoreSearch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B9D5A93A264F0B5500F920D7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -84,7 +85,7 @@
 				B9385A422661C720001E8891 /* SlideOutAnimationController.swift */,
 				B9B6919B266467B5005492FA /* FadeOutAnimationController.swift */,
 				B93D1F2126530A91005B43F0 /* SearchResultCell.xib */,
-				B99734062653337B00809E84 /* NothingFoundCell.xib */,
+				B9BC24C3267157E300500206 /* NothingFoundCell.xib */,
 				B992D8252659B0BB005980CD /* LoadingCell.xib */,
 			);
 			path = View;
@@ -171,6 +172,7 @@
 			knownRegions = (
 				en,
 				Base,
+				nl,
 			);
 			mainGroup = B9D5A92E264F0B5500F920D7;
 			productRefGroup = B9D5A938264F0B5500F920D7 /* Products */;
@@ -190,7 +192,7 @@
 				B9D5A944264F0B5600F920D7 /* Assets.xcassets in Resources */,
 				B992D8262659B0BB005980CD /* LoadingCell.xib in Resources */,
 				B93D1F2226530A91005B43F0 /* SearchResultCell.xib in Resources */,
-				B99734072653337B00809E84 /* NothingFoundCell.xib in Resources */,
+				B9BC24C1267157E300500206 /* NothingFoundCell.xib in Resources */,
 				B9D5A942264F0B5500F920D7 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -222,6 +224,15 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		B9BC24C3267157E300500206 /* NothingFoundCell.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B9BC24C2267157E300500206 /* en */,
+				B9BC24C4267158A100500206 /* nl */,
+			);
+			name = NothingFoundCell.xib;
+			sourceTree = "<group>";
+		};
 		B9D5A940264F0B5500F920D7 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -237,6 +248,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -298,6 +310,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
