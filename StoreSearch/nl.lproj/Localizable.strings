@@ -35,3 +35,11 @@
 
 /* Localized kind: TV Episode */
 "TV Episode" = "TV serie";
+
+"Nothing Found" = "Niets gevonden";
+
+"There was an error reading from the iTunes Store. Please try again." = "Er ging iets fout bij het communiceren met de iTunes winkel. Probeer het nog eens.";
+
+"Unknown" = "Onbekend";
+
+"Whoops..." = "Foutje...";
