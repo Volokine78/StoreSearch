@@ -15,6 +15,7 @@ class SearchViewController: UIViewController {
     
     var landscapeVC: LandscapeViewController?
     private let search = Search()
+    weak var splitViewDetail: DetailViewController?
     
     override func viewDidLoad() {
         super.viewDidLoad()
