@@ -49,18 +49,17 @@ class DetailViewController: UIViewController {
             dimmingView.frame = view.bounds
             view.insertSubview(dimmingView, at: 0)
         } else {
-            view.backgroundColor = UIColor(patternImage: UIImage(
-                                           named: "LandscapeBackground")!)
+            view.backgroundColor = UIColor(patternImage: UIImage(named: "LandscapeBackground")!)
             popupView.isHidden = true
         }
         if searchResult != nil {
             updateUI()
         }
         
-        view.backgroundColor = UIColor.clear
-        let dimmingView = GradientView(frame: CGRect.zero)
-        dimmingView.frame = view.bounds
-        view.insertSubview(dimmingView, at: 0)
+//        view.backgroundColor = UIColor.clear
+//        let dimmingView = GradientView(frame: CGRect.zero)
+//        dimmingView.frame = view.bounds
+//        view.insertSubview(dimmingView, at: 0)
         
         let nc = NotificationCenter.default
         nc.addObserver(
