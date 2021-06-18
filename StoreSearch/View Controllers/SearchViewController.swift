@@ -20,7 +20,9 @@ class SearchViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        searchBar.becomeFirstResponder()
+        if UIDevice.current.userInterfaceIdiom != .pad {
+            searchBar.becomeFirstResponder()
+        }
         
         tableView.contentInset = UIEdgeInsets(top: 94, left: 0, bottom: 0, right: 0)
         searchBar.delegate = self
