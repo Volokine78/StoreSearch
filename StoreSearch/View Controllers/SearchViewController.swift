@@ -128,6 +128,18 @@ class SearchViewController: UIViewController {
             })
         }
     }
+    
+    private func hidePrimaryPane() {
+        UIView.animate(
+            withDuration: 0.25,
+            animations: {
+                self.splitViewController!.preferredDisplayMode = .secondaryOnly
+            },
+            completion: { _ in
+                self.splitViewController!.preferredDisplayMode = .automatic
+            }
+        )
+    }
 }
 
 // MARK: - Search Bar Delegate
@@ -221,6 +233,9 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
         } else {
             if case .results(let list) = search.state {
                 splitViewDetail?.searchResult = list[indexPath.row]
+            }
+            if splitViewController!.displayMode != .oneBesideSecondary {
+                hidePrimaryPane()
             }
         }
     }
