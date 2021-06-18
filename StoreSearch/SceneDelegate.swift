@@ -8,10 +8,11 @@
 import UIKit
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
-
+    var window: UIWindow?
+    
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         searchVC.splitViewDetail = detailVC
-        //splitVC.delegate.self
+        splitVC.delegate = self
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
@@ -43,7 +44,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     }
     
     // MARK: - Properties
-    var window: UIWindow?
+    
     var splitVC: UISplitViewController {
         return window!.rootViewController as! UISplitViewController
     }
