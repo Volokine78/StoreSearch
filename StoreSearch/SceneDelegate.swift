@@ -9,22 +9,9 @@ import UIKit
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
-    var window: UIWindow?
-    var splitVC: UISplitViewController {
-        return window!.rootViewController as! UISplitViewController
-    }
-    var searchVC: SearchViewController {
-        let nav = splitVC.viewControllers.first as! UINavigationController
-        return nav.viewControllers.first as! SearchViewController
-    }
-    var detailVC: DetailViewController {
-        let nav = splitVC.viewControllers.last as! UINavigationController
-        return nav.viewControllers.first as! DetailViewController
-    }
-
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         searchVC.splitViewDetail = detailVC
-        guard let _ = (scene as? UIWindowScene) else { return }
+        //splitVC.delegate.self
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
@@ -54,7 +41,30 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // Use this method to save data, release shared resources, and store enough scene-specific state information
         // to restore the scene back to its current state.
     }
-
-
+    
+    // MARK: - Properties
+    var window: UIWindow?
+    var splitVC: UISplitViewController {
+        return window!.rootViewController as! UISplitViewController
+    }
+    var searchVC: SearchViewController {
+        let nav = splitVC.viewControllers.first as! UINavigationController
+        return nav.viewControllers.first as! SearchViewController
+    }
+    var detailVC: DetailViewController {
+        let nav = splitVC.viewControllers.last as! UINavigationController
+        return nav.viewControllers.first as! DetailViewController
+    }
 }
 
+extension SceneDelegate: UISplitViewControllerDelegate {
+    func splitViewController(
+        _ svc: UISplitViewController,
+        topColumnForCollapsingToProposedTopColumn proposedTopColumn: UISplitViewController.Column
+    ) -> UISplitViewController.Column {
+        if UIDevice.current.userInterfaceIdiom == .phone {
+            return .primary
+        }
+        return proposedTopColumn
+    }
+}
