@@ -235,6 +235,11 @@
                                     <constraint firstAttribute="bottom" secondItem="czV-sT-JAX" secondAttribute="bottom" constant="16" id="hOb-ta-Y6l"/>
                                     <constraint firstAttribute="trailing" secondItem="X0r-9S-o6Y" secondAttribute="trailing" constant="8" id="vtG-Si-FEz"/>
                                 </constraints>
+                                <variation key="heightClass=regular-widthClass=regular">
+                                    <mask key="subviews">
+                                        <exclude reference="X0r-9S-o6Y"/>
+                                    </mask>
+                                </variation>
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="VDp-ms-oub"/>
@@ -271,7 +276,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="mC0-ag-5Kl"/>
+        <segue reference="2ia-SA-C7V"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" name="AccentColor"/>
     <resources>
