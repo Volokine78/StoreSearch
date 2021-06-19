@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		B9071BD82668115C006959B9 /* Search.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9071BD72668115C006959B9 /* Search.swift */; };
+		B92BA43B267E796F00B43109 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B92BA43A267E796F00B43109 /* MenuViewController.swift */; };
 		B93612172655CA0F007347FF /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B93612162655CA0F007347FF /* Constants.swift */; };
 		B9385A3F2661B4E4001E8891 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9385A3E2661B4E4001E8891 /* GradientView.swift */; };
 		B9385A412661BD8E001E8891 /* BounceAnimationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9385A402661BD8E001E8891 /* BounceAnimationController.swift */; };
@@ -32,6 +33,7 @@
 
 /* Begin PBXFileReference section */
 		B9071BD72668115C006959B9 /* Search.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Search.swift; sourceTree = "<group>"; };
+		B92BA43A267E796F00B43109 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		B93612162655CA0F007347FF /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		B9385A3E2661B4E4001E8891 /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 		B9385A402661BD8E001E8891 /* BounceAnimationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BounceAnimationController.swift; sourceTree = "<group>"; };
@@ -137,6 +139,7 @@
 				B9D5A93E264F0B5500F920D7 /* SearchViewController.swift */,
 				B9B6919926644B4C005492FA /* LandscapeViewController.swift */,
 				B9E8EA75265F13A800EB47B5 /* DetailViewController.swift */,
+				B92BA43A267E796F00B43109 /* MenuViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -217,6 +220,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B9E8EA74265EFDCF00EB47B5 /* UIImageView+DownloadImage.swift in Sources */,
+				B92BA43B267E796F00B43109 /* MenuViewController.swift in Sources */,
 				B9D5A93F264F0B5500F920D7 /* SearchViewController.swift in Sources */,
 				B9D5A93B264F0B5500F920D7 /* AppDelegate.swift in Sources */,
 				B96ABDF8264F48D700AF4250 /* SearchResult.swift in Sources */,
