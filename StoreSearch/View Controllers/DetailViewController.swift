@@ -195,8 +195,19 @@ extension DetailViewController: MenuViewControllerDelegate {
                 controller.setSubject(NSLocalizedString("Support Request",
                                                         comment: "Email subject"))
                 controller.setToRecipients(["tolgapirturk@hotmail.com"])
+                controller.mailComposeDelegate = self
                 self.present(controller, animated: true, completion: nil)
             }
         }
+    }
+}
+
+extension DetailViewController: MFMailComposeViewControllerDelegate {
+    func mailComposeController(
+        _ controller: MFMailComposeViewController,
+        didFinishWith result: MFMailComposeResult,
+        error: Error?
+    ) {
+        dismiss(animated: true, completion: nil)
     }
 }
