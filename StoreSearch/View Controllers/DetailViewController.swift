@@ -135,6 +135,10 @@ class DetailViewController: UIViewController {
             downloadTask = artworkImageView.loadImage(url: largeURL)
         }
         popupView.isHidden = false
+        if UIDevice.current.userInterfaceIdiom == .pad {
+            popupView.alpha = 0
+            showPopUpView()
+        }
     }
     
     @objc func applicationWillResignActive() {
@@ -151,6 +155,15 @@ class DetailViewController: UIViewController {
         }
         popover.delegate = self
         present(popover, animated: true, completion: nil)
+    }
+    
+    private func showPopUpView() {
+        UIView.animate(
+            withDuration: 0.5,
+            animations: {
+                self.popupView.alpha = 1
+            }
+        )
     }
 }
 

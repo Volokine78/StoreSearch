@@ -150,16 +150,6 @@ class SearchViewController: UIViewController {
             }
         )
     }
-    
-    private func showPopUpView() {
-        
-        UIView.animate(
-            withDuration: 1.5,
-            animations: {
-                self.splitViewDetail?.popupView.alpha = 1
-            }
-        )
-    }
 }
 
 // MARK: - Search Bar Delegate
@@ -253,7 +243,6 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
         } else {
             if case .results(let list) = search.state {
                 splitViewDetail?.searchResult = list[indexPath.row]
-                showPopUpView()
             }
             if splitViewController!.displayMode != .oneBesideSecondary {
                 hidePrimaryPane()
